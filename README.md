@@ -14,7 +14,9 @@ We developed two versions of our model:
 # Results
 The model was implemented in the development environment of Google Colab, with a remote GPU Tesla T4. The framework used is PyTorch Lightning, useful to quickly save neural network results and reproduce deep learning experiments. The training of the model was performed in a supervised regression way, with 150 epochs and 16 samples per batch, taking advantage of the THETIS dataset. We chose **Mean Absolute Error (MAE)** as loss criterion because, unlike Mean Squared Error, it is less sensitive to outliers, thanks to its measure of absolute differences that makes all errors treated equally. Moreover, MAE was exploited as the metric to choose the best model, while **Adam** was selected as optimizer.  
 The results are obtained for all the possible combinations of input data and number of BiLSTMs. An overview is provided in the following table:
+
 ![image](https://github.com/user-attachments/assets/e965b6bd-47bf-47f8-a94f-c2479669acd4)
+
 Although the Two-BiLSTMs model achieves the lowest results, an analysis of the predicted score distribution compared to the true scores reveals its inability to generalize effectively. Specifically, the predictions are heavily concentrated above 0.95, despite the true scores being more dispersed. Among all the tried models, the BiLSTM+Weights one comes out as the version with the highest generalization capability. 
 
 *Read the report to have more implementation and experimental details and explanations* 
